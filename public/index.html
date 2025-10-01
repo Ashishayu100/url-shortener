@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🔗 URL Shortener</h1>
+      <p>Shorten your URLs and track analytics</p>
+    </header>
+
+    <!-- URL Shortening Form -->
+    <div class="card">
+      <h2>Shorten a URL</h2>
+      
+      <!-- Original form group -->
+      <div class="form-group">
+        <input
+          type="url"
+          id="urlInput"
+          placeholder="Enter your long URL here..."
+          required
+        >
+        <button type="button" id="shortenBtn">Shorten</button>
+      </div>
+
+      <!-- New section for custom alias -->
+      <div class="custom-alias-section">
+        <label>
+          <input type="checkbox" id="useCustomAlias">
+          Use custom alias (optional)
+        </label>
+        <input
+          type="text"
+          id="customAliasInput"
+          placeholder="your-custom-alias"
+          class="hidden"
+          pattern="[a-zA-Z0-9-_]+"
+          maxlength="20"
+        >
+      </div>
+
+      <div id="result" class="result hidden">
+        <p>Your shortened URL:</p>
+        <div class="short-url-container">
+          <input type="text" id="shortUrlDisplay" readonly>
+          <button type="button" id="copyBtn">Copy</button>
+        </div>
+        <button type="button" class="analytics-btn" id="analyticsBtn">View Analytics</button>
+      </div>
+
+      <div id="error" class="error hidden"></div>
+    </div>
+
+    <!-- Recent URLs -->
+    <div class="card">
+      <h2>Recent URLs</h2>
+      <div id="recentUrls" class="recent-urls">
+        <p class="loading">Loading...</p>
+      </div>
+    </div>
+
+    <!-- Analytics Modal -->
+    <div id="analyticsModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>URL Analytics</h2>
+        <div id="analyticsContent">
+          <!-- Analytics will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

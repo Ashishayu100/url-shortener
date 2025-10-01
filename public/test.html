@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+    <h1>Test Page</h1>
+    <input type="text" id="urlInput" value="https://www.google.com">
+    <button type="button" onclick="testClick()">Test Button</button>
+    <div id="output"></div>
+
+    <script>
+        console.log('Script loaded');
+
+        function testClick() {
+            console.log('Button clicked!');
+            document.getElementById('output').innerText = 'Button works!';
+            alert('Button clicked!');
+        }
+
+        console.log('Function defined:', typeof testClick);
+    </script>
+</body>
+</html>
